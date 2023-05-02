@@ -15,6 +15,15 @@
 
 <?php include BASE_PATH . "view/layout/header.php" ?>
 <div class="container">
+    <?php
+    $message = flash('error');
+    if (!empty($message)) {
+        ?>
+        <div class="mb-2 alert alert-danger"><small class="form-text text-danger">
+                <?= $message ?>
+            </small></div>
+        <?php
+    } ?>
     <form action="<?= url('reqregister') ?>" method="post">
         <label class="mt-3" for="">username</label>
         <input type="text" name="username" class="form-control mt-3">

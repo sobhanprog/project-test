@@ -13,6 +13,15 @@
 </head>
 <body>
 <div class="container">
+    <?php
+    $message = flash('error');
+    if (!empty($message)) {
+        ?>
+        <div class="mb-2 alert alert-danger"><small class="form-text text-danger">
+                <?= $message ?>
+            </small></div>
+        <?php
+    } ?>
     <?php include BASE_PATH . "view/layout/header.php" ?>
     <div class="container">
         <form action="<?= url('reqlogin') ?>" method="post">
